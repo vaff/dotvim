@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/danjessen/Downloads/google-python-exercises/basic'
+let g:netrw_dirhist_2='/Users/danjessen/Sites/public_html/microwanew'
+let g:netrw_dirhist_3='/Users/danjessen/Documents/mmd/Postkort/flashbuilder projekt/src'
+let g:netrw_dirhist_4='/Users/danjessen/Sites/public_html/microwanew'

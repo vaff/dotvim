@@ -34,7 +34,7 @@
 " General {
 	set background=dark         " Assume a dark background
     if !has('win32') && !has('win64')
-        set term=$TERM       " Make arrow and other keys work
+      set term=$TERM       " Make arrow and other keys work
     endif
 	filetype plugin indent on  	" Automatically detect file types.
 	syntax on 					" syntax highlighting
@@ -110,7 +110,7 @@
 	set wildmode=list:longest,full	" comand <Tab> completion, list matches, then longest common part, then all.
 	set whichwrap=b,s,h,l,<,>,[,]	" backspace and cursor keys wrap to
 	set scrolljump=5 				" lines to scroll when cursor leaves screen
-	set scrolloff=3 				" minimum lines to keep above and below cursor
+	set scrolloff=5 				" minimum lines to keep above and below cursor
 	set foldenable  				" auto fold code
 	set gdefault					" the /g flag on :s substitutions by default
 
@@ -119,9 +119,11 @@
 " Formatting {
 	set nowrap                     	" wrap long lines
 	set autoindent                 	" indent at the same level of the previous line
-	set shiftwidth=4               	" use indents of 4 spaces
-	set noexpandtab 	       		" tabs are tabs, not spaces
-	set tabstop=4 					" an indentation every four columns
+	set shiftwidth=2               	" use indents of 4 spaces
+	set expandtab 	       		" tabs are tabs, not spaces
+  set softtabstop=2
+  set shiftround
+	set tabstop=2 					" an indentation every four columns
 	"set matchpairs+=<:>            	" match, to be used with % 
 	set pastetoggle=<F12>          	" pastetoggle (sane indentation on pastes)
 	"set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
@@ -250,7 +252,7 @@
 
 		" Popup menu hightLight Group
 		"highlight Pmenu	ctermbg=13	guibg=DarkBlue
-        "highlight PmenuSel	ctermbg=7	guibg=DarkBlue		guifg=LightBlue
+    "highlight PmenuSel	ctermbg=7	guibg=DarkBlue		guifg=LightBlue
 		"highlight PmenuSbar ctermbg=7	guibg=DarkGray
 		"highlight PmenuThumb			guibg=Black
 
@@ -297,7 +299,7 @@
 	" SnipMate {
 		" Setting the author var
         " If forking, please overwrite in your .vimrc.local file
-		let g:snips_author = 'Steve Francia <steve.francia@gmail.com>'
+		let g:snips_author = 'Dan Kjaer Jessen <danjessen@gmail.com>'
 		" Shortcut for reloading snippets, useful when developing
 		nnoremap ,smr <esc>:exec ReloadAllSnippets()<cr>
 	" }
@@ -386,10 +388,39 @@
 	if has('gui_running')
 		set guioptions-=T          	" remove the toolbar
 		set lines=40               	" 40 lines of text instead of 24,
-		set transparency=5          " Make the window slightly transparent
 	else
 		set term=builtin_ansi       " Make arrow and other keys work
 	endif
+
+  if has("gui_macvim")
+    " Fullscreen takes up entire screen
+    set fuoptions=maxhorz,maxvert
+
+    " Command-Return for fullscreen
+    macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
+
+    " Map Command-# to switch tabs
+    map  <D-0> 0gt
+    imap <D-0> <Esc>0gt
+    map  <D-1> 1gt
+    imap <D-1> <Esc>1gt
+    map  <D-2> 2gt
+    imap <D-2> <Esc>2gt
+    map  <D-3> 3gt
+    imap <D-3> <Esc>3gt
+    map  <D-4> 4gt
+    imap <D-4> <Esc>4gt
+    map  <D-5> 5gt
+    imap <D-5> <Esc>5gt
+    map  <D-6> 6gt
+    imap <D-6> <Esc>6gt
+    map  <D-7> 7gt
+    imap <D-7> <Esc>7gt
+    map  <D-8> 8gt
+    imap <D-8> <Esc>8gt
+    map  <D-9> 9gt
+    imap <D-9> <Esc>9gt
+  endif
 " }
 
 function! InitializeDirectories()
