@@ -299,7 +299,7 @@
 	" SnipMate {
 		" Setting the author var
         " If forking, please overwrite in your .vimrc.local file
-		let g:snips_author = 'Dan Kjaer Jessen <danjessen@gmail.com>'
+		let g:snips_author = 'Dan Jessen <anon@anon.no>'
 		" Shortcut for reloading snippets, useful when developing
 		nnoremap ,smr <esc>:exec ReloadAllSnippets()<cr>
 	" }
